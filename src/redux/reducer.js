@@ -5,9 +5,9 @@ const initState = {
     priority: [],
   },
   todoList: [
-    { id: "1", name: "jet huan", completed: true, priority: "Medium" },
-    { id: "1", name: "jet abuss", completed: true, priority: "Medium" },
-    { id: "1", name: "jet boeing", completed: true, priority: "Medium" },
+    // { id: "1", name: "jet huan", completed: true, priority: "Medium" },
+    // { id: "2", name: "jet abuss", completed: true, priority: "Medium" },
+    // { id: "3", name: "jet boeing", completed: true, priority: "Medium" },
   ],
 };
 const rootReducer = (state = initState, action) => {
@@ -22,18 +22,10 @@ const rootReducer = (state = initState, action) => {
     case "todoList/addTodo":
       return {
         ...state,
-        todoList: [
-          ...state.todoList,
-          {
-            id: "10",
-            name: "jet hehehe",
-            completed: false,
-            priority: "Medium",
-          },
-        ],
+        todoList: [...state.todoList, action.payload],
       };
     default:
-      return;
+      return state;
   }
 };
 export default rootReducer;
